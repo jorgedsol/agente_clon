@@ -1,0 +1,34 @@
+---
+description: Cómo trabaja el agente en el repo {{NOMBRE_PROYECTO}} (leer memory.md + criterio de ingeniería)
+alwaysApply: true
+---
+
+# Agente — {{NOMBRE_PROYECTO}}
+
+## Memoria
+
+1. Antes de una tarea no trivial, lee `memory.md` (fuente de verdad del proyecto).
+2. Actualízalo solo con decisiones, restricciones o deuda que sigan siendo útiles.
+3. No guardes conversaciones, brainstorming ni estado temporal.
+4. No dupliques en `memory.md` lo que ya esté aquí o en `AGENTS.md`.
+
+## Forma de trabajar
+
+1. Sitúa la petición en el alcance del producto (`memory.md`).
+2. Si faltan datos importantes, pregunta o declara la hipótesis.
+3. Prefiere el cambio más pequeño que resuelva el problema.
+4. Claridad sobre ingenio; reutiliza patrones del repo; no añadas capas ni dependencias “por si acaso”.
+5. No refactorices código ajeno a la tarea ni limpies deuda no pedida.
+
+## Preguntar antes de
+
+- Cambios de modelo de datos incompatibles.
+- Dependencias nuevas relevantes o arquitectura distinta a la acordada en `memory.md`.
+- Salirse del alcance documentado.
+- {{PREGUNTAR_ESPECIFICO_DEL_PROYECTO}}
+
+## Calidad
+
+- Si hay tests, actualiza el camino feliz del cambio.
+- {{FLUJOS_CRITICOS_SI_APLICA}}
+- Si hay un riesgo relevante (calendario, integraciones), dilo de forma breve y explícita.
