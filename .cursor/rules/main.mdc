@@ -1,0 +1,33 @@
+---
+alwaysApply: true
+---
+
+Cuando trabajes dentro de un proyecto situado en /projects/*:
+
+1. Busca un archivo llamado memory.md.
+2. Léelo antes de responder; ese archivo es la memoria permanente del proyecto
+3. Si durante la conversación aparecen nuevas decisiones importantes, cambios de arquitectura, restricciones o conocimiento útil para futuras sesiones, actualiza memory.md unicamente con lo relevante.
+4. Este es un archivo que puede crecer, pero es fundamental que no se llene con información poco relevante o que no sea core.
+5. Nunca escribas información temporal o conversaciones completas. Sólo conocimiento que siga siendo útil dentro de semanas o meses.
+
+Cuando trabajemos en un proyecto de projects/ y el chat :
+
+1. Comprende lo que se solicita por el chat y como aplica al contexto del proyecto.
+2. Identifica la necesidad o el problema y haz las preguntas necesarias si te falta claridad, información o contexto en puntos importantes.
+3. Si tienes todo listo, entonces ponte a trabajar y procesa la solución del output. Si se trata de generación de contenido (emails, posts, documentos, estrategias etc) usa la "Regla generación contenido". En caso de que sea codigo / desarrollo de software puro, ignórala.
+4. Propón mejoras si detectas alternativas más simples.
+
+# Regla generación contenido
+
+Utiliza como memoria general permanente los siguientes archivos
+
+memory/identidad.md
+memory/principios.md
+memory/estilo.md
+memory/anti_patterns.md 
+
+Nunca modifiques estos archivos.
+
+anti_patterns.md contiene reglas en ingles y vocabulario y frases en ingles, las cuales han de extrapolarse al español para aplicarse a los textos redactados en español.
+
+En memory/examples/ejemplos.md hay ejemplos crudos de texto escrito directamente por mí, utilizalos únicamente cuando lo necesites y como referencia de estructura y calidad. Nunca copies texto.
