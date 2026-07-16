@@ -38,8 +38,7 @@ MVP funcional en **12 semanas**, iterable después. Priorizar validación de pro
 Hilo de emails julio 2026 cerrado en alcance. Propuesta final ajustada. Pendiente: confirmación formal, inicio, Figma y endpoints.
 
 Entregables:
-- `input/Meteoshare propuesta de proyecto.docx` — versión base detallada (no tocar; referencia)
-
+- `docs/Meteoshare propuesta de proyecto.docx` — propuesta referencia
 
 Prototipo UX: https://v0-public-link-for-boss.vercel.app/  
 Figma: existe (acceso vía partner; gestionar si no se ve).
