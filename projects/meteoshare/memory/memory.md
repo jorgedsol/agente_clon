@@ -107,7 +107,6 @@ Arranque del núcleo no bloqueado por endpoints; la integración meteo se acopla
 - Sin IA en MVP; validación = confirmación comunitaria. IA post-MVP sobre texto primero.
 - Integración por endpoints, no por inmersión en código del agregador.
 - 12 semanas encajan al cliente.
-- Sin cifras económicas aún; confidencialidad Eurostar ↔ Jorge.
 - Cesión IP al cliente; tiendas/infra a cargo del cliente.
 
 ---
@@ -149,3 +148,9 @@ Arranque del núcleo no bloqueado por endpoints; la integración meteo se acopla
 ## Próximo paso
 
 Enviar propuesta actualizada + email de cierre; si confirman, formalizar inicio y pedir endpoints/Figma.
+
+## Convenciones
+
+- **Confidencialidad:** propuestas entre Eurostar y Jorge; no distribuir a terceros sin consentimiento.
+- **docs/:** Contiene la información de base del proyecto donde voy almacenando contenido en bruto (No es necesario revisarlo)
+- **Entorno:** usar `venv_app` de la raíz del repo; no crear venvs dentro del proyecto.
