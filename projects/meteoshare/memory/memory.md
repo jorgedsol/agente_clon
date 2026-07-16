@@ -144,7 +144,7 @@ Arranque del núcleo no bloqueado por endpoints; la integración meteo se acopla
 
 ---
 
-## Próximo paso
+## Próximos pasos
 
 Enviar propuesta actualizada + email de cierre; si confirman, formalizar inicio y pedir endpoints/Figma.
 
