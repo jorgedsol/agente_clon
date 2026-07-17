@@ -60,7 +60,7 @@ Crear exactamente:
 Antes de rellenar `memory.md`, preguntar al usuario **cómo** quiere aportar contexto para la primera versión. Ofrecer estas opciones (puede combinar):
 
 1. **Contexto en el chat** — resume o pega lo esencial ahora (qué es, para quién, objetivo, restricciones…).
-2. **Subir a `docs/`** — deja archivos en `projects/<nombre>/docs/` (propuesta, emails, notas, capturas…) y avisa cuando estén listos para leerlos.
+2. **Subir a `input/`** — deja archivos en `projects/<nombre>/input/` (propuesta, emails, notas, capturas…) y avisa cuando estén listos para leerlos.
 3. **Estructura vacía** — solo carpetas + `memory.md` con el esqueleto del blueprint (título = nombre del proyecto; secciones vacías o con “pendiente” mínimo).
 
 No asumir la opción. Esperar respuesta antes del paso 5 (salvo que el usuario ya haya dado contexto claro en el mismo mensaje de creación).
@@ -70,7 +70,7 @@ No asumir la opción. Esperar respuesta antes del paso 5 (salvo que el usuario y
 Según lo elegido:
 
 - **Chat:** usar solo lo que el usuario escribió en la conversación.
-- **docs/:** leer lo que haya en `docs/` (y, si aporta, `input/`).
+- **input/:** leer lo que haya en `input/`
 - **Vacío:** no inventar contenido.
 
 Reglas:
