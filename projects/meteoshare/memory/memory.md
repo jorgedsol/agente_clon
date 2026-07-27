@@ -113,9 +113,9 @@ Arranque del núcleo no bloqueado por endpoints; la integración meteo se acopla
 ## Restricciones
 
 - No inventar endpoints: el cliente los facilita (agregador u origen).
-- No meter tarifas hasta acordarlo.
 - No mencionar uso de IA como herramienta de trabajo en docs al cliente.
 - No comprometer push/segundo plano en el entregable MVP.
+- Oferta comercial MVP: **48.000 € + IVA**, proyecto cerrado. Pagos por entrega de valor: 30 % inicio (14.400) / 40 % Beta (19.200) / 30 % MVP final (14.400). Beta ≈ mapa+datos+reportes+validación; final ≈ comunidades+feed+entrega. Fuera: alcance extra, mantenimiento, hosting, licencias, tiendas.
 
 ---
 
