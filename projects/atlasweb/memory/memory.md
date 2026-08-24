@@ -21,8 +21,10 @@ Implantación del circuito de extracciones e impresión de etiquetas con Atlaswe
 ## Estado actual
 
 - Pilotos en H. Henares en varias secciones; equipos y plantillas ya configurados en fases previas.
-- Guía de distribución: origen en `input/Extracciones 6H y servicio de impresion.docx`; versión pulida en `output/` (mismas imágenes y estilo).
+- Guía de distribución: `docs/Extracciones 6H y servicio de impresion.docx`.
+- Inventario de implantación H. Henares: `output/Informe implantacion etiquetas Atlasweb - H. Henares.docx`
 - Metodología escalable basada en los tres bloques de despliegue documentados.
+- IT hospitalario avisado: si aparecen etiquetadoras Servolab no inventariadas, se aplica el mismo proceso de configuración y prueba.
 
 ## Producto
 
@@ -45,9 +47,7 @@ Puntos críticos: hostname, nombre de impresora, DPI/plantilla alineados.
 
 ## Plan
 
-1. ~~Subir documento a `input/`~~.
-2. ~~Pulir guía en `output/` conservando imágenes y estilo~~.
-3. Usar la guía como base de distribución masiva; ajustar con feedback de nuevos hospitales/secciones.
+- Implantar en los 6H la impresion de etiquetas en el circuito hospitalario utilizando las guías y aprendizajes del piloto realizado en Hospital del Henares
 
 ## Decisiones importantes
 
@@ -71,6 +71,8 @@ Puntos críticos: hostname, nombre de impresora, DPI/plantilla alineados.
 
 ## Pendientes
 
+- Calibración de etiquetadora en Reanimación (`HH2REANW1005705`).
+- Incorporar puestos Servolab que IT identifique fuera del inventario actual.
 - Diagrama de arquitectura/flujo (opcional; la guía lo deja como mejora).
 - Interlocutores de despliegue masivo fuera de H. Henares.
 - Validar la guía pulida con una pasada real en un puesto nuevo.
