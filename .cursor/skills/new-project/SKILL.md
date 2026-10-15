@@ -25,7 +25,7 @@ projects/<nombre>/
 
 Nombre de carpeta: minúsculas, sin espacios (barra baja si hace falta). Ej.: `meteoshare`, `acme_landing`.
 
-Plantilla de memoria: [resources/blueprint_memory.md](resources/blueprint_memory.md). Conservar las secciones del blueprint; y subsecciones si tiene sentido para el proyecto en concreto o si el usuario lo pide.
+Plantilla de memoria: [references/blueprint_memory.md](references/blueprint_memory.md). Conservar las secciones del blueprint; y subsecciones si tiene sentido para el proyecto en concreto o si el usuario lo pide.
 
 ## Workflow
 
@@ -82,7 +82,7 @@ Reglas:
 
 ### 5. Escribir memory.md
 
-1. Partir de [resources/blueprint_memory.md](resources/blueprint_memory.md).
+1. Partir de [references/blueprint_memory.md](references/blueprint_memory.md).
 2. Sustituir `Nombre_proyecto` por el nombre real del proyecto.
 3. Rellenar secciones con lo inferido de las fuentes; omitir relleno inventado.
 4. Guardar en `projects/<nombre>/memory/memory.md`.

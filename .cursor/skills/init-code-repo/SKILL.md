@@ -41,7 +41,7 @@ No crear más rules ni más `.md` de contexto. No duplicar el mismo contenido en
 | `agent.mdc` | Proceso del agente; sin repetir épicas/arquitectura |
 | `README.md` | Instrucciones de copia para el usuario |
 
-Plantillas base: [templates/](templates/). Partir de ellas y **rellenar** con info del proyecto (no dejar TODOs si la info existe).
+Plantillas base: [references/](references/). Partir de ellas y **rellenar** con info del proyecto (no dejar TODOs si la info existe).
 
 ## Workflow
 
