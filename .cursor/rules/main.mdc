@@ -3,32 +3,45 @@ alwaysApply: true
 ---
 Antes de nada, gracias por ayudarme.
 
-Cuando trabajes dentro de un proyecto situado en /projects/*:
+Este repo es un hub de varios proyectos bajo `projects/`. No es un repo de producto.
 
-1. Si existe un archivo `memory.md`, léelo antes de comenzar cualquier tarea. Ese archivo representa la memoria permanente del proyecto.
-2. Si durante el trabajo aparecen nuevas decisiones importantes, cambios de arquitectura, restricciones o conocimiento útil para futuras sesiones, actualiza memory.md unicamente con lo relevante.
-3. Este es un archivo que puede crecer, pero es fundamental que no se llene con información poco relevante o que no sea core.
-4. Nunca escribas información temporal, conversaciones completas, brainstorming o cualquier información que deje de ser util en poco tiempo.
-5. Mantén `memory.md` claro, compacto y sin información duplicada.
+Si el usuario pide un proyecto nuevo y no existe `projects/<nombre>/`, usa la skill `new-project` y no sigas con el trabajo de ese proyecto hasta tener la carpeta y `memory.md`.
 
-Cuando trabajemos en un proyecto de projects/ y el chat :
+Cuando trabajes dentro de `projects/<nombre>/`:
 
-1. Comprende lo que se solicita por el chat y como encaja en el contexto del proyecto.
-2. Identifica la necesidad o el problema y haz las preguntas necesarias si te falta claridad, información o contexto en puntos importantes.
-3. Si tienes todo listo, realiza la tarea solicitada. Si se trata de generación de contenido (emails, posts, documentos, estrategias etc) usa la "Regla generación contenido". En caso de que sea codigo / desarrollo de software puro, ignórala.
-4. Propón mejoras si detectas alternativas más simples.
+1. Lee `memory/memory.md` antes de una tarea no trivial. Es la única fuente de verdad de ese proyecto.
+2. Sitúa la petición en el alcance de ese archivo.
+3. Si faltan datos importantes, pregunta o declara la hipótesis.
+4. Prefiere el cambio más pequeño que resuelva el problema.
+5. Claridad sobre ingenio; reutiliza lo que ya hay; no añadas capas ni dependencias por si acaso.
+6. No refactorices ni limpies deuda no pedida.
+7. Propón una alternativa más simple si la hay.
 
-# Regla generación contenido
+## Archivos
 
-Utiliza como memoria general permanente los siguientes archivos
+- `projects/<nombre>/memory/memory.md`: única fuente de verdad del proyecto. Conserva los encabezados de sección (no renombres, no borres, no añadas secciones salvo que yo lo pida; pide confirmación explícita antes). Si durante el trabajo aparecen decisiones importantes, cambios de arquitectura, restricciones o conocimiento útil para futuras sesiones, actualízalo solo con lo que siga siendo útil. Nada de chats, brainstorming ni notas que caduquen en días. Sin duplicar ideas entre secciones. Compacto. Secciones vacías: encabezado + `Pendiente.`
+- `projects/<nombre>/docs/`: referencia. `input/`: material crudo. `output/`: entregables. No mezclar esos roles.
+- Skills (`criterio-personal`, `new-project`, `init-code-repo`) y sus `references/`: **nunca modificar**.
+- Este `main.mdc`: no lo cambies sin autorización explícita mía; pregunta siempre.
 
-memory/identidad.md
-memory/principios.md
-memory/estilo.md
-memory/anti_patterns.md 
+No metas identidad/estilo en el `memory.md` del proyecto.
 
-Nunca modifiques estos archivos.
+## Contenido
 
-anti_patterns.md contiene reglas en ingles y vocabulario y frases en ingles, las cuales han de extrapolarse al español para aplicarse a los textos redactados en español.
+Si la tarea es contenido (emails, posts, docs, estrategia, propuestas, etc.), usa la skill `criterio-personal`. Tiene indicaciones de estrategia, metodología y toma de decisiones.
 
-En memory/examples/ejemplos.md hay ejemplos crudos de texto escrito directamente por mí, utilizalos únicamente cuando lo necesites y como referencia de estructura y calidad. Nunca copies texto.
+Si es solo código / desarrollo de software, no cargues esa skill.
+
+Los textos de `ejemplos.md` son bruto: no se usan tal cual ni se copian.
+
+## Código de un producto
+
+El código de producción no vive en este repo. Si hay que arrancar el pack del repo de código, usa la skill `init-code-repo`.
+
+## Preguntar antes de
+
+- Cambios de modelo de datos incompatibles (cuando aplique).
+- Dependencias nuevas relevantes o arquitectura distinta a `memory.md`.
+- Salirse del alcance documentado.
+- Cambiar la estructura de secciones de `memory.md`.
+- Sobrescribir un `projects/<nombre>/` que ya existe.
