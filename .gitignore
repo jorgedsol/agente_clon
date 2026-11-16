@@ -1,7 +1,9 @@
-# project files except memory.md
+# Archivos de proyecto: versionar memorias y journals; excluir los entregables
 /projects/**
 !/projects/**/
 !/projects/**/memory.md
+!/projects/**/memory/JOURNALS/*.md
+!/projects/**/memory/JOURNALS/.gitkeep
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

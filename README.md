@@ -1,53 +1,71 @@
 # Agente clon
 
-Repositorio de trabajo para un agente de IA que actúa como extensión de mi criterio, estilo y forma de pensar.
-
-No es un producto ni una aplicación. Es el entorno donde viven la memoria permanente, las reglas del agente y el trabajo por proyectos.
-
-## Para qué sirve
-
-Cuando trabajo con el agente en un proyecto, este repositorio le da contexto estable:
-
-- quién soy y cómo encaro problemas
-- con qué principios decide y prioriza
-- cómo debe escribir
-- qué evitar
-
-Así las respuestas y el trabajo generado se mantienen coherentes entre sesiones y entre proyectos.
+Repositorio de trabajo para un agente que actúa como extensión del criterio, estilo y forma de pensar de Jorge. Conserva contexto estable y trabajo por proyectos; el código de producción vive en repositorios separados.
 
 ## Estructura
 
-```
+```text
 .
-├── memory/                 # Memoria permanente (identidad, principios, estilo, ejemplos)
-├── projects/               # Un directorio por proyecto, con su propia memoria
-└── .agents/
-    ├── rules/              # Reglas del agente en este repo
-    └── skills/             # Capacidades reutilizables del agente
+├── AGENTS.md                     # Instrucciones operativas para Codex
+├── memory/
+│   ├── memory.md                 # Memoria transversal e índice de ámbitos
+│   └── JOURNALS/                 # Aportaciones transversales
+├── projects/
+│   └── <nombre>/
+│       ├── docs/                 # Referencia
+│       ├── input/                # Material de entrada
+│       ├── output/               # Entregables
+│       └── memory/
+│           ├── memory.md         # Memoria consolidada del proyecto
+│           └── JOURNALS/         # Aportaciones e historial
+└── .agents/skills/               # Todas las skills del hub, incluidas las de memoria
 ```
 
-### `memory/`
+Git versiona las memorias y los journals de los proyectos. Sus documentos de entrada y entregables siguen excluidos. Los archivos `.gitkeep` permiten conservar las carpetas de journals vacías.
 
-Gestion de memoria general. 
+## Cómo se usa la memoria
 
-### `projects/`
+Antes de una tarea no trivial, el agente consulta el índice en `memory/memory.md` y la memoria del proyecto. Los journals relacionados aportan cambios aún no consolidados; su información debe interpretarse según su estado de validación. La memoria contiene conocimiento del hub o del proyecto; las reglas de actuación pertenecen a `AGENTS.md` y a las skills.
 
-Cada proyecto tiene su carpeta. Ahí vive el trabajo concreto y un memory/ con decisiones, restricciones y conocimiento útil de ese proyecto que conserva su memoria.
+Durante el trabajo, `memory-manager` puede registrar una decisión, restricción, descubrimiento o aprendizaje con valor futuro. Primero comprueba que no esté ya documentado. Crea un archivo independiente y conserva intacta la memoria consolidada. Las tareas rutinarias y los resúmenes de sesión no generan journals.
 
-En git solo se versiona la memoria de cada proyecto (`memory.md`). El resto del contenido de `projects/` queda fuera del repositorio a propósito: el código y los artefactos de cada proyecto no forman parte de este repo.
+La consolidación se solicita expresamente con `memory-update`, indicando el ámbito:
 
-### `.agents/rules/`
+```text
+$memory-update projects/atlasweb
+$memory-update hub
+$memory-update todos los ámbitos del hub
+```
 
-Instrucciones operativas para el agente cuando tiene que gestionar archivos en concreto
+La skill contrasta las aportaciones con la memoria, integra lo que corresponda, mantiene pendientes las dudas, actualiza el índice cuando procede y documenta qué ha tratado. Los journals originales se conservan; una aportación posterior corrige otra mediante una referencia, sin reescribir el historial. No hay hooks ni tareas automáticas de consolidación.
 
-### `.agents/skills/`
+## Skills de memoria en Codex
 
-Skills que amplían lo que el agente puede hacer de forma repetible. Iniciar el repo de código, cuándo leer o actualizar memorias...
+Las dos skills se definen y versionan en este repo, junto con las existentes:
 
-## Cómo se usa
+```text
+.agents/skills/
+├── memory-manager/
+│   └── SKILL.md
+└── memory-update/
+    ├── SKILL.md
+    └── agents/openai.yaml
+```
 
-1. Abres este repositorio con un agente.
-2. Trabajas dentro de `projects/<nombre-proyecto>/`.
-3. El agente lee la memoria del proyecto (y, si aplica, la memoria general) antes de actuar.
-4. Si aparecen decisiones o restricciones importantes, se actualiza el `memory.md` del proyecto.
-5. Si el proyecto es de software y toca programar, pides el pack del repo de código y el agente lo genera con la skill.
+`memory-manager` puede activarse por relevancia o mediante `$memory-manager`. `memory-update` tiene `policy.allow_implicit_invocation: false` en `agents/openai.yaml`, además de exigir una petición expresa en sus instrucciones. Esta es la adaptación de la invocación manual a Codex; no se utiliza el campo de Claude `disable-model-invocation`. La ubicación dentro del repo y la política están documentadas en la [documentación oficial de skills](https://learn.chatgpt.com/docs/build-skills).
+
+Las skills se comparten al clonar el repo y no requieren instalación global. Si Codex no muestra una skill nueva, reinicia la aplicación.
+
+## Proyectos nuevos y packs de código
+
+`new-project` conserva su flujo de inicialización y crea la primera memoria. Después se añade su carpeta de journals y se registra el alta pendiente de indexar en un journal raíz. La incorporación al índice espera a `memory-update`.
+
+Las skills existentes y sus referencias permanecen protegidas. Si piden actualizar una memoria existente, prevalece la captura en journals definida en `AGENTS.md`. Al pedir `init-code-repo`, la anotación del pack en la memoria del clon se captura en un journal; los archivos generados deben incorporar también la separación entre captura y consolidación.
+
+## Adaptación de la especificación
+
+El documento `sistema_memoria_colaborativa_claude_code.md` se conserva como referencia original. En este hub, `AGENTS.md` cumple el papel de las instrucciones de Claude. La raíz y los proyectos utilizan la misma estructura `memory/memory.md` y `memory/JOURNALS/`, conservando las memorias de proyecto y sus secciones existentes. Las skills residen en `.agents/skills/` para que todo el sistema esté en el repo.
+
+El estado de validación de un journal (`confirmado`, `propuesta` o `pendiente de validación`) se registra aparte de su consolidación (`pendiente`, `consolidado` o `descartado`). Así, consolidar no elimina si la información estaba confirmada o pendiente de comprobar.
+
+No se crean memorias adicionales para directorios sin conocimiento persistente propio. La creación de un ámbito durante el trabajo ordinario empieza por un journal; la memoria consolidada y su entrada en el índice se crean durante una consolidación manual. Esta regla evita la excepción de editar el índice desde la captura que aparecía en la especificación original.
