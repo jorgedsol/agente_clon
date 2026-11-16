@@ -16,8 +16,8 @@ Todo el sistema reside dentro del repo y es versionable: instrucciones, skills, 
 | Elemento | Responsabilidad |
 | --- | --- |
 | `AGENTS.md` / `CLAUDE.md` | Reglas de actuación, permisos y límites del agente. |
-| `memory/memory.md` | Conocimiento consolidado del ámbito. En la raíz, también el índice de memorias específicas. |
-| `memory/JOURNALS/` | Aportaciones pendientes e historial de su tratamiento. |
+| `memory/MEMORY.md` | Conocimiento consolidado del ámbito. En la raíz, también el índice de memorias específicas. |
+| `memory/journals/` | Aportaciones pendientes e historial de su tratamiento. |
 | `memory-manager` | Consultar y capturar; nunca modificar memoria consolidada ni índice. |
 | `memory-update` | Consolidar manualmente, mantener el índice y documentar el tratamiento de los journals. |
 
@@ -33,20 +33,20 @@ Estructura para Codex:
 REPO/
 ├── AGENTS.md
 ├── memory/
-│   ├── memory.md
-│   └── JOURNALS/
+│   ├── MEMORY.md
+│   └── journals/
 ├── .agents/skills/
 │   ├── memory-manager/
 │   │   ├── SKILL.md
-│   │   └── references/journal.md
+│   │   └── references/JOURNAL.md
 │   └── memory-update/
 │       ├── SKILL.md
-│       ├── references/memory.md
+│       ├── references/MEMORY.md
 │       └── agents/openai.yaml
 └── <ámbito>/                         # Solo con memoria propia aprobada por el usuario
     └── memory/
-        ├── memory.md
-        └── JOURNALS/
+        ├── MEMORY.md
+        └── journals/
 ```
 
 Un ámbito puede ser un proyecto, módulo, equipo, área o proceso. Usar sus directorios reales; no imponer `projects/` ni crear ámbitos artificiales. La memoria propia es opcional: el usuario decide en qué ámbitos se inicia. Implantar el sistema no autoriza a crear memoria o journals en todos los módulos; cualquier alta específica necesita su aprobación, sin volver a pedirla cuando ya exista.
@@ -81,7 +81,7 @@ Si se solicitan ambos agentes, compartir las mismas memorias y journals. Crear l
 
 1. Leer las instrucciones del repo y sus protecciones. Revisar el estado de Git, si existe, y localizar memorias, journals, skills, reglas e inicializadores. Excluir dependencias, entornos y repos ajenos.
 2. Identificar qué se reutiliza, qué falta, qué rutas cambian y qué instrucciones ordenan editar memoria directamente. Concretar los cambios que requieran autorización antes de pedirla; no volver a pedir permisos ya concedidos.
-3. Adoptar `memory/memory.md` y `memory/JOURNALS/` también en la raíz. Conservar variantes equivalentes de mayúsculas ya existentes y reflejar su escritura exacta en todas las referencias. Una memoria suelta en la raíz debe migrarse a su carpeta; cualquier excepción adicional requiere acuerdo explícito y sustitución coherente de rutas en las plantillas generadas.
+3. Adoptar `memory/MEMORY.md` y `memory/journals/` también en la raíz. Conservar variantes equivalentes de mayúsculas ya existentes y reflejar su escritura exacta en todas las referencias. Una memoria suelta en la raíz debe migrarse a su carpeta; cualquier excepción adicional requiere acuerdo explícito y sustitución coherente de rutas en las plantillas generadas.
 
 No reemplazar archivos de instrucciones completos ni sobrescribir skills existentes de igual nombre. Integrar los cambios necesarios respetando sus protecciones. No eliminar instrucciones de subdirectorios para imponer un único archivo raíz.
 
@@ -111,7 +111,7 @@ Repetir la implantación debe reutilizar lo existente sin duplicar archivos, ins
 
 ## 4. Plantilla de memoria e índice
 
-Guardar la siguiente plantilla en `<carpeta-de-skills>/memory-update/references/memory.md` y usarla para las memorias nuevas. Rellenar cada apartado según su ámbito. Los encabezados orientan el contenido; los apartados desconocidos contienen `Pendiente.`. No transformar la memoria en un diario de tareas.
+Guardar la siguiente plantilla en `<carpeta-de-skills>/memory-update/references/MEMORY.md` y usarla para las memorias nuevas. Rellenar cada apartado según su ámbito. Los encabezados orientan el contenido; los apartados desconocidos contienen `Pendiente.`. No transformar la memoria en un diario de tareas.
 
 ```markdown
 # Nombre del repo o ámbito
@@ -183,8 +183,8 @@ Solo en la memoria raíz añadir el índice. Repetir esta entrada por cada memor
 
 ### Nombre del ámbito
 
-- **Ruta de memoria:** `<ámbito>/memory/memory.md`
-- **Ruta de journals:** `<ámbito>/memory/JOURNALS/`
+- **Ruta de memoria:** `<ámbito>/memory/MEMORY.md`
+- **Ruta de journals:** `<ámbito>/memory/journals/`
 - **Alcance:** conocimiento que contiene.
 - **Consultar cuando:** situaciones en que resulta relevante.
 - **Ámbitos relacionados:** nombres o rutas; ninguno si no los hay.
@@ -199,7 +199,7 @@ Integrarlo en `AGENTS.md` o `CLAUDE.md`, conservando las demás instrucciones. E
 ```markdown
 ## Sistema de memoria colaborativa
 
-La raíz del sistema es el directorio que contiene este archivo. La memoria general y el índice están en `memory/memory.md`; sus journals, en `memory/JOURNALS/`. El índice declara las rutas de los ámbitos específicos, relativas a esta raíz.
+La raíz del sistema es el directorio que contiene este archivo. La memoria general y el índice están en `memory/MEMORY.md`; sus journals, en `memory/journals/`. El índice declara las rutas de los ámbitos específicos, relativas a esta raíz.
 
 - Usa el índice y `memory-manager` para cargar solo las memorias necesarias. Antes de registrar, consulta la memoria propietaria y los journals pendientes relacionados para evitar duplicados. Filtra primero por nombre: los journals terminados en `--consolidado.md` o `--descartado.md` quedan fuera de la lectura habitual y solo se abren si hace falta un antecedente concreto. No crees journals por actividad rutinaria, resúmenes de sesión ni información efímera.
 - Durante el trabajo ordinario no edites ninguna memoria consolidada ni el índice. Solo `memory-update`, invocada expresamente por el usuario, puede consolidar; nunca por iniciativa del agente, otra skill, un hook o una tarea programada.
@@ -227,7 +227,7 @@ description: Consulta memorias distribuidas y registra conocimiento duradero rel
 
 # Consulta y captura de memoria
 
-Lee las instrucciones aplicables y localiza la raíz del sistema. Consulta `memory/memory.md` y su índice; usa las rutas reales de cada ámbito. Si la raíz no está clara, resuélvela antes de escribir.
+Lee las instrucciones aplicables y localiza la raíz del sistema. Consulta `memory/MEMORY.md` y su índice; usa las rutas reales de cada ámbito. Si la raíz no está clara, resuélvela antes de escribir.
 
 ## Consulta y selección
 
@@ -241,13 +241,13 @@ Antes de crear un journal, lee la memoria propietaria, si existe, y los pendient
 
 El usuario decide qué ámbitos tienen memoria propia. Si falta su aprobación, propón el alta sin crear carpetas de memoria ni journals allí; conserva la aportación relevante en los journals del ámbito autorizado más cercano o de la raíz, identificando el ámbito afectado.
 
-Con la aprobación, crea `<ámbito>/memory/JOURNALS/` y registra allí la aportación. Si aún no está indexado y no existe un alta pendiente, crea un journal raíz de alta que indique la aprobación, ruta del ámbito, memoria prevista, journals, alcance, cuándo consultarlo y enlace a la aportación. No copies su contenido.
+Con la aprobación, crea `<ámbito>/memory/journals/` y registra allí la aportación. Si aún no está indexado y no existe un alta pendiente, crea un journal raíz de alta que indique la aprobación, ruta del ámbito, memoria prevista, journals, alcance, cuándo consultarlo y enlace a la aportación. No copies su contenido.
 
 No crees una memoria consolidada ni edites el índice desde esta skill. Las inicializaciones expresamente solicitadas se rigen por las instrucciones raíz; también generan un alta pendiente si el ámbito no está indexado.
 
 ## Escritura
 
-Usa `references/journal.md`, relativa a esta skill. Un journal registra una aportación coherente; separa decisiones independientes. Omite apartados que no apliquen, sin inventar datos.
+Usa `references/JOURNAL.md`, relativa a esta skill. Un journal registra una aportación coherente; separa decisiones independientes. Omite apartados que no apliquen, sin inventar datos.
 
 El nombre inicial es `YYYY-MM-DD-HHMM-titulo-descriptivo.md`, sin etiqueta de tratamiento. Usa la fecha y zona horaria del usuario; si se desconoce, UTC indicada en el registro. Crea el archivo de forma exclusiva, sin sobrescribir; si colisiona, añade un sufijo o identificador breve.
 
@@ -258,7 +258,7 @@ Nunca modifiques memorias o índice, fusiones journals, los marques como tratado
 Comprueba el archivo escrito e informa brevemente de qué se ha registrado, su ámbito y ruta. Si no hay conocimiento nuevo relevante, no crees nada.
 ```
 
-Crear `<carpeta-de-skills>/memory-manager/references/journal.md`:
+Crear `<carpeta-de-skills>/memory-manager/references/JOURNAL.md`:
 
 ```markdown
 # JOURNAL: Título descriptivo
@@ -310,7 +310,7 @@ Elegir un valor por metadato, sin dejar las alternativas de ejemplo. Fecha, ámb
 
 ## 7. Skill `memory-update`
 
-Crear `<carpeta-de-skills>/memory-update/SKILL.md` y aplicar la configuración manual del apartado 2. Su referencia `references/memory.md` es la plantilla del apartado 4.
+Crear `<carpeta-de-skills>/memory-update/SKILL.md` y aplicar la configuración manual del apartado 2. Su referencia `references/MEMORY.md` es la plantilla del apartado 4.
 
 ```markdown
 ---
@@ -324,7 +324,7 @@ Solo ejecuta por invocación expresa del usuario a `memory-update`. Leer esta sk
 
 ## Alcance
 
-Lee las instrucciones, el índice en `memory/memory.md` y el estado de Git, si existe. Resuelve la raíz del sistema antes de escribir. Interpreta el alcance así:
+Lee las instrucciones, el índice en `memory/MEMORY.md` y el estado de Git, si existe. Resuelve la raíz del sistema antes de escribir. Interpreta el alcance así:
 
 - `raíz`: aportaciones transversales y altas pendientes del índice.
 - Una ruta de ámbito: su memoria y journals; subámbitos con memoria propia solo si el usuario los incluye.
@@ -345,7 +345,7 @@ Contrasta cada aportación con memoria, fuentes y antecedentes. Decide si integr
 
 Integra solo conocimiento duradero en su ámbito propietario. Conserva motivos, restricciones, excepciones y referencias; evita duplicados y resúmenes que pierdan detalle útil. Enlaza el historial de decisiones sustituidas. Las instrucciones del agente no se incorporan a la memoria.
 
-Mantén las secciones existentes; reorganiza solo con necesidad justificada y autorización cuando el repo la exija. No muevas ni elimines memorias sin autorización para ese cambio. Para crear una memoria que falte, comprueba que el usuario aprobó su inicio en ese ámbito y usa `references/memory.md` con conocimiento contrastado. Sin aprobación, deja el alta pendiente y solicita esa decisión. No sobrescribas una memoria existente. Las secciones sin datos contienen `Pendiente.`.
+Mantén las secciones existentes; reorganiza solo con necesidad justificada y autorización cuando el repo la exija. No muevas ni elimines memorias sin autorización para ese cambio. Para crear una memoria que falte, comprueba que el usuario aprobó su inicio en ese ámbito y usa `references/MEMORY.md` con conocimiento contrastado. Sin aprobación, deja el alta pendiente y solicita esa decisión. No sobrescribas una memoria existente. Las secciones sin datos contienen `Pendiente.`.
 
 Registra en la raíz solo impactos transversales incluidos en el alcance y referencias al detalle. Mantén el índice cuando cambien memorias o sus alcances: nombre, ruta de memoria, journals, alcance, cuándo consultar y relaciones. Las rutas son relativas a la raíz; verifica que existan.
 
@@ -361,7 +361,7 @@ Escribe y verifica primero las memorias y el índice. Después actualiza los met
 - `Consolidación: descartado`: fecha y motivo concreto, con referencia al duplicado o sustituto si corresponde; nombre terminado en `--descartado.md`.
 - `Consolidación: pendiente`: falta validación, hay contradicciones o no se completó o verificó la escritura; nombre sin etiqueta de tratamiento.
 
-Ejemplo: `2026-11-16-1030-decision-alcance.md` pasa a `2026-11-16-1030-decision-alcance--consolidado.md`. Conserva el nombre base y la carpeta; no sobrescribas otro archivo ni repitas etiquetas. Actualiza solo las referencias de ruta afectadas por el renombrado, incluso en journals anteriores, sin alterar lo que se registró. La memoria consolidada conserva su nombre `memory.md`: sigue siendo la fuente de consulta del ámbito.
+Ejemplo: `2026-11-16-1030-decision-alcance.md` pasa a `2026-11-16-1030-decision-alcance--consolidado.md`. Conserva el nombre base y la carpeta; no sobrescribas otro archivo ni repitas etiquetas. Actualiza solo las referencias de ruta afectadas por el renombrado, incluso en journals anteriores, sin alterar lo que se registró. La memoria consolidada conserva su nombre `MEMORY.md`: sigue siendo la fuente de consulta del ámbito.
 
 Conserva el cuerpo —salvo los ajustes de referencias de ruta indicados—, el estado de validación original y los archivos. Si aparece validación posterior, cita su fuente en la nota; no reescribas el registro original. Si quedan partes de una aportación sin resolver, mantenla pendiente, sin etiqueta, y anota lo ya incorporado. Tras una interrupción, comprueba lo escrito antes de repetirlo.
 

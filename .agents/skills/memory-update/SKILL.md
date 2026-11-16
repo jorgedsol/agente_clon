@@ -9,12 +9,12 @@ Solo ejecuta esta skill cuando el usuario la invoque expresamente, por ejemplo `
 
 ## Alcance y rutas
 
-Esta skill se versiona en `.agents/skills/memory-update/` dentro del hub. Lee las instrucciones del repositorio y su índice general en `memory/memory.md`:
+Esta skill se versiona en `.agents/skills/memory-update/` dentro del hub. Lee las instrucciones del repositorio y su índice general en `memory/MEMORY.md`:
 
 | Ámbito | Memoria consolidada | Journals |
 | --- | --- | --- |
-| Hub | `memory/memory.md` | `memory/JOURNALS/` |
-| Proyecto | `projects/<nombre>/memory/memory.md` | `projects/<nombre>/memory/JOURNALS/` |
+| Hub | `memory/MEMORY.md` | `memory/journals/` |
+| Proyecto | `projects/<nombre>/memory/MEMORY.md` | `projects/<nombre>/memory/journals/` |
 | Subámbito | Ruta declarada en el índice | Carpeta de journals de ese ámbito |
 
 Las rutas del índice son relativas a la raíz del hub. Respeta las rutas existentes y no crees variantes por diferencias de mayúsculas.

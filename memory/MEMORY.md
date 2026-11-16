@@ -27,7 +27,7 @@ Contexto persistente, documentación y entregables por proyecto; capacidades reu
 
 ## 6. Arquitectura
 
-La memoria transversal y su índice residen en `memory/memory.md`, con aportaciones en `memory/JOURNALS/`. Los proyectos tienen sus propias carpetas de memoria. Todas las skills del hub residen en `.agents/skills/` dentro del repo.
+La memoria transversal y su índice residen en `memory/MEMORY.md`, con aportaciones en `memory/journals/`. Los proyectos tienen sus propias carpetas de memoria. Todas las skills del hub residen en `.agents/skills/` dentro del repo.
 
 ## 7. Plan
 
@@ -69,24 +69,24 @@ Todas las rutas son relativas a la raíz del hub. El detalle pertenece a cada me
 
 ## Atlasweb
 
-- **Ruta de memoria:** `projects/atlasweb/memory/memory.md`
-- **Ruta de journals:** `projects/atlasweb/memory/JOURNALS/`
+- **Ruta de memoria:** `projects/atlasweb/memory/MEMORY.md`
+- **Ruta de journals:** `projects/atlasweb/memory/journals/`
 - **Alcance:** implantación del circuito de extracciones e impresión de etiquetas con Atlasweb en hospitales 6H.
 - **Consultar cuando:** se trabaje en distribución, configuración, guías o aprendizajes del despliegue de Atlasweb.
 - **Ámbitos relacionados:** ninguno registrado.
 
 ## Hyperlender
 
-- **Ruta de memoria:** `projects/hyperlender/memory/memory.md`
-- **Ruta de journals:** `projects/hyperlender/memory/JOURNALS/`
+- **Ruta de memoria:** `projects/hyperlender/memory/MEMORY.md`
+- **Ruta de journals:** `projects/hyperlender/memory/journals/`
 - **Alcance:** plataforma de micropréstamos P2P, enfoque de colaboración, experiencia de uso y preparación para producción.
 - **Consultar cuando:** se trabaje en alcance, estimación, propuesta o revisión técnica del proyecto Hyperlender.
 - **Ámbitos relacionados:** ninguno registrado.
 
 ## MeteoShare
 
-- **Ruta de memoria:** `projects/meteoshare/memory/memory.md`
-- **Ruta de journals:** `projects/meteoshare/memory/JOURNALS/`
+- **Ruta de memoria:** `projects/meteoshare/memory/MEMORY.md`
+- **Ruta de journals:** `projects/meteoshare/memory/journals/`
 - **Alcance:** plataforma meteorológica móvil, alcance del MVP, arquitectura y propuesta del proyecto.
 - **Consultar cuando:** se trabaje en producto, planificación, propuesta o preparación del desarrollo de MeteoShare.
 - **Ámbitos relacionados:** ninguno registrado.

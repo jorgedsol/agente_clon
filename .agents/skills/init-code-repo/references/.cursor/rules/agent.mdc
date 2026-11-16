@@ -1,5 +1,5 @@
 ---
-description: Cómo trabaja el agente en el repo {{NOMBRE_PROYECTO}} (leer memory.md + criterio de ingeniería)
+description: Cómo trabaja el agente en el repo {{NOMBRE_PROYECTO}} (leer MEMORY.md + criterio de ingeniería)
 alwaysApply: true
 ---
 
@@ -7,14 +7,14 @@ alwaysApply: true
 
 ## Memoria
 
-1. Antes de una tarea no trivial, lee `memory.md` (fuente de verdad del proyecto).
+1. Antes de una tarea no trivial, lee `MEMORY.md` (fuente de verdad del proyecto).
 2. Actualízalo solo con decisiones, restricciones o deuda que sigan siendo útiles.
 3. No guardes conversaciones, brainstorming ni estado temporal.
-4. No dupliques en `memory.md` lo que ya esté aquí o en `AGENTS.md`.
+4. No dupliques en `MEMORY.md` lo que ya esté aquí o en `AGENTS.md`.
 
 ## Forma de trabajar
 
-1. Sitúa la petición en el alcance del producto (`memory.md`).
+1. Sitúa la petición en el alcance del producto (`MEMORY.md`).
 2. Si faltan datos importantes, pregunta o declara la hipótesis.
 3. Prefiere el cambio más pequeño que resuelva el problema.
 4. Claridad sobre ingenio; reutiliza patrones del repo; no añadas capas ni dependencias “por si acaso”.
@@ -23,7 +23,7 @@ alwaysApply: true
 ## Preguntar antes de
 
 - Cambios de modelo de datos incompatibles.
-- Dependencias nuevas relevantes o arquitectura distinta a la acordada en `memory.md`.
+- Dependencias nuevas relevantes o arquitectura distinta a la acordada en `MEMORY.md`.
 - Salirse del alcance documentado.
 - {{PREGUNTAR_ESPECIFICO_DEL_PROYECTO}}
 

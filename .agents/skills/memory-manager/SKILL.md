@@ -11,9 +11,9 @@ Esta skill forma parte del hub y se versiona en `.agents/skills/memory-manager/`
 
 1. Lee las instrucciones del repositorio e identifica su raíz y el ámbito de la tarea.
 2. Lee la memoria general y su índice. Respeta las rutas declaradas; en el hub `agente_clon` son:
-   - General e índice: `memory/memory.md`; journals transversales: `memory/JOURNALS/`.
-   - Proyecto: `projects/<nombre>/memory/memory.md`; journals: `projects/<nombre>/memory/JOURNALS/`.
-   - Subámbito, si lo necesita: `<ámbito>/memory/memory.md` y `<ámbito>/memory/JOURNALS/`.
+   - General e índice: `memory/MEMORY.md`; journals transversales: `memory/journals/`.
+   - Proyecto: `projects/<nombre>/memory/MEMORY.md`; journals: `projects/<nombre>/memory/journals/`.
+   - Subámbito, si lo necesita: `<ámbito>/memory/MEMORY.md` y `<ámbito>/memory/journals/`.
 3. Consulta solo las memorias relacionadas. Si falta una entrada del índice, comprueba las rutas del ámbito antes de afirmar que no existe memoria.
 4. Lee los journals relacionados para detectar decisiones aún no consolidadas, duplicados y contradicciones. Distingue conocimiento consolidado, hechos confirmados, propuestas y datos pendientes de validar; un journal nuevo no convierte una propuesta en decisión.
 

@@ -4,7 +4,7 @@ Copia a la **raíz del repo de código** estos tres elementos:
 
 | Qué | Para qué |
 |-----|----------|
-| `memory.md` | Toda la info del proyecto (única fuente de verdad) |
+| `MEMORY.md` | Toda la info del proyecto (única fuente de verdad) |
 | `AGENTS.md` | Resumen mínimo que el agente ve al abrir el repo |
 | `.cursor/rules/agent.mdc` | Cómo debe trabajar (siempre activo) |
 

@@ -1,9 +1,9 @@
 ---
 name: init-code-repo
 description: >-
-  Genera el pack project_code_init (memory.md, AGENTS.md, agent.mdc) para arrancar
+  Genera el pack project_code_init (MEMORY.md, AGENTS.md, agent.mdc) para arrancar
   el repo de código de un proyecto con agente inteligente. Infiera contexto desde
-  memory.md y docs del proyecto. Usar cuando el usuario pida iniciar el repo de
+  MEMORY.md y docs del proyecto. Usar cuando el usuario pida iniciar el repo de
   código, project_code_init, pack de agente para programar, scaffolding del agente
   de desarrollo, o empezar a programar un producto software dentro de projects/.
   No usar en proyectos solo de contenido (posts, emails, propuestas, estrategia).
@@ -26,8 +26,8 @@ Si hay duda (p. ej. “automatización” ambigua): pregunta una vez si habrá r
 ```
 projects/<nombre>/project_code_init/
 ├── README.md                 # Solo para el pack (cómo copiar); no va al repo final
-├── memory.md                 # Fuente de verdad del producto/técnico
-├── AGENTS.md                 # Resumen mínimo → apunta a memory.md
+├── MEMORY.md                 # Fuente de verdad del producto/técnico
+├── AGENTS.md                 # Resumen mínimo → apunta a MEMORY.md
 └── .cursor/rules/
     └── agent.mdc             # Una sola rule alwaysApply (cómo trabajar)
 ```
@@ -36,7 +36,7 @@ No crear más rules ni más `.md` de contexto. No duplicar el mismo contenido en
 
 | Archivo | Rol |
 |---------|-----|
-| `memory.md` | Hechos: producto, stack, decisiones, alcance, plan, no-hacer |
+| `MEMORY.md` | Hechos: producto, stack, decisiones, alcance, plan, no-hacer |
 | `AGENTS.md` | ~10–15 líneas: lee memory + límites duros |
 | `agent.mdc` | Proceso del agente; sin repetir épicas/arquitectura |
 | `README.md` | Instrucciones de copia para el usuario |
@@ -66,11 +66,11 @@ Trabajar bajo `projects/<nombre>/` del proyecto activo en el chat.
 
 Leer, en este orden de prioridad:
 
-1. `projects/<nombre>/memory/memory.md` (o `memory.md` si esa es la convención)
+1. `projects/<nombre>/memory/MEMORY.md` (o `MEMORY.md` si esa es la convención)
 2. Docs de alcance/propuesta en `docs/`, `input/`, `output/` (docx, md, txt) si aportan stack, alcance o decisiones
 3. Conversación actual
 
-No inventar stack, endpoints ni alcance. Si falta un dato crítico, pregunta o deja el campo como pendiente explícito en `memory.md`.
+No inventar stack, endpoints ni alcance. Si falta un dato crítico, pregunta o deja el campo como pendiente explícito en `MEMORY.md`.
 
 ### 3. Inferir
 
@@ -89,14 +89,14 @@ Extraer y consolidar:
 
 Separar:
 
-- **Hechos del producto** → `memory.md`
+- **Hechos del producto** → `MEMORY.md`
 - **Límites duros en una línea** → `AGENTS.md`
 - **Comportamiento del agente** (preguntar antes, mocks, alcance) → `agent.mdc` (adaptar al proyecto; no copiar reglas de otro producto tal cual)
 
 ### 4. Escribir archivos
 
 1. Crear `projects/<nombre>/project_code_init/` (sobrescribir solo si el usuario lo pide o el pack está vacío/incompleto).
-2. Rellenar `memory.md` completo (única fuente de verdad densa).
+2. Rellenar `MEMORY.md` completo (única fuente de verdad densa).
 3. Rellenar `AGENTS.md` corto.
 4. Rellenar `agent.mdc` con nombre del proyecto y límites/preguntas específicas.
 5. Escribir `README.md` del pack (cómo copiar al repo real).
@@ -110,9 +110,9 @@ Calidad:
 
 ### 5. Actualizar memoria del proyecto en el clon
 
-En `projects/<nombre>/memory/memory.md`, añadir o actualizar una línea en entregables/estado:
+En `projects/<nombre>/memory/MEMORY.md`, añadir o actualizar una línea en entregables/estado:
 
-- `project_code_init/` — pack agente del repo de código (`memory.md` + `AGENTS.md` + `agent.mdc`)
+- `project_code_init/` — pack agente del repo de código (`MEMORY.md` + `AGENTS.md` + `agent.mdc`)
 
 Solo eso; no copiar el contenido técnico entero otra vez.
 
@@ -121,7 +121,7 @@ Solo eso; no copiar el contenido técnico entero otra vez.
 Indicar:
 
 1. Ruta del pack generado.
-2. Qué copiar a la raíz del repo de código (`memory.md`, `AGENTS.md`, `.cursor/rules/agent.mdc` — no el README del pack).
+2. Qué copiar a la raíz del repo de código (`MEMORY.md`, `AGENTS.md`, `.cursor/rules/agent.mdc` — no el README del pack).
 3. Que el scaffolding de código (`mobile/`, `backend/`, etc.) es el siguiente paso, no parte de este pack.
 4. Opcional: workspace multi-root con `agente_clon` + repo de código.
 
@@ -129,12 +129,12 @@ Indicar:
 
 - Generar el pack en un proyecto solo de posts/emails/propuestas.
 - Varias rules (`project.mdc` + `memory.mdc` + `engineering.mdc`) — una sola `agent.mdc`.
-- `AGENTS.md` largo que repite `memory.md`.
+- `AGENTS.md` largo que repite `MEMORY.md`.
 - Inventar endpoints, stack o alcance no documentados.
 - Meter el código de producción dentro de `agente_clon` (este pack no es el repo de código; solo lo prepara).
 
 ## Referencia rápida de roles
 
-- `memory.md` = qué saber
+- `MEMORY.md` = qué saber
 - `AGENTS.md` = resumen al entrar
 - `agent.mdc` = cómo actuar

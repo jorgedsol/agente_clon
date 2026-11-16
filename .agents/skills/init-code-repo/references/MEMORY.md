@@ -2,7 +2,7 @@
 
 > Única fuente de verdad del proyecto en este repo.
 > Actualizar solo con decisiones/restricciones que sigan siendo útiles.
-> Encargo/cliente (clon): `agente_clon/projects/{{slug}}/memory/memory.md`.
+> Encargo/cliente (clon): `agente_clon/projects/{{slug}}/memory/MEMORY.md`.
 
 ## Qué es
 
@@ -22,7 +22,7 @@
 ├── {{CARPETA_BACKEND_U_OTRA}}/
 ├── docs/
 ├── AGENTS.md
-├── memory.md
+├── MEMORY.md
 └── .cursor/rules/agent.mdc
 ```
 

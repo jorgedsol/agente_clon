@@ -8,16 +8,16 @@ Repositorio de trabajo para un agente que actúa como extensión del criterio, e
 .
 ├── AGENTS.md                     # Instrucciones operativas para Codex
 ├── memory/
-│   ├── memory.md                 # Memoria transversal e índice de ámbitos
-│   └── JOURNALS/                 # Aportaciones transversales
+│   ├── MEMORY.md                 # Memoria transversal e índice de ámbitos
+│   └── journals/                 # Aportaciones transversales
 ├── projects/
 │   └── <nombre>/
 │       ├── docs/                 # Referencia
 │       ├── input/                # Material de entrada
 │       ├── output/               # Entregables
 │       └── memory/
-│           ├── memory.md         # Memoria consolidada del proyecto
-│           └── JOURNALS/         # Aportaciones e historial
+│           ├── MEMORY.md         # Memoria consolidada del proyecto
+│           └── journals/         # Aportaciones e historial
 └── .agents/skills/               # Todas las skills del hub, incluidas las de memoria
 ```
 
@@ -25,7 +25,7 @@ Git versiona las memorias y los journals de los proyectos. Sus documentos de ent
 
 ## Cómo se usa la memoria
 
-Antes de una tarea no trivial, el agente consulta el índice en `memory/memory.md` y la memoria del proyecto. Los journals relacionados aportan cambios aún no consolidados; su información debe interpretarse según su estado de validación. La memoria contiene conocimiento del hub o del proyecto; las reglas de actuación pertenecen a `AGENTS.md` y a las skills.
+Antes de una tarea no trivial, el agente consulta el índice en `memory/MEMORY.md` y la memoria del proyecto. Los journals relacionados aportan cambios aún no consolidados; su información debe interpretarse según su estado de validación. La memoria contiene conocimiento del hub o del proyecto; las reglas de actuación pertenecen a `AGENTS.md` y a las skills.
 
 Durante el trabajo, `memory-manager` puede registrar una decisión, restricción, descubrimiento o aprendizaje con valor futuro. Primero comprueba que no esté ya documentado. Crea un archivo independiente y conserva intacta la memoria consolidada. Las tareas rutinarias y los resúmenes de sesión no generan journals.
 
@@ -64,7 +64,7 @@ Las skills existentes y sus referencias permanecen protegidas. Si piden actualiz
 
 ## Adaptación de la especificación
 
-El documento `sistema_memoria_colaborativa_claude_code.md` se conserva como referencia original. En este hub, `AGENTS.md` cumple el papel de las instrucciones de Claude. La raíz y los proyectos utilizan la misma estructura `memory/memory.md` y `memory/JOURNALS/`, conservando las memorias de proyecto y sus secciones existentes. Las skills residen en `.agents/skills/` para que todo el sistema esté en el repo.
+La guía de implantación está en `setup/sistema_memoria_colaborativa.md`. En este hub, `AGENTS.md` cumple el papel de las instrucciones de Claude. La raíz y los proyectos utilizan la misma estructura `memory/MEMORY.md` y `memory/journals/`, conservando las memorias de proyecto y sus secciones existentes. Las skills residen en `.agents/skills/` para que todo el sistema esté en el repo.
 
 El estado de validación de un journal (`confirmado`, `propuesta` o `pendiente de validación`) se registra aparte de su consolidación (`pendiente`, `consolidado` o `descartado`). Así, consolidar no elimina si la información estaba confirmada o pendiente de comprobar.
 
