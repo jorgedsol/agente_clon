@@ -128,7 +128,7 @@ Indicar:
 ## Anti-patrones
 
 - Generar el pack en un proyecto solo de posts/emails/propuestas.
-- Varias rules (`project.mdc` + `memory.mdc` + `engineering.mdc`) — una sola `agent.mdc`.
+- Varias rules (`project.mdc` + `MEMORY.mdc` + `engineering.mdc`) — una sola `agent.mdc`.
 - `AGENTS.md` largo que repite `MEMORY.md`.
 - Inventar endpoints, stack o alcance no documentados.
 - Meter el código de producción dentro de `agente_clon` (este pack no es el repo de código; solo lo prepara).
