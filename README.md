@@ -1,6 +1,6 @@
 # Agente clon
 
-Repositorio de trabajo para un agente que actúa como extensión del criterio, estilo y forma de pensar de Jorge. Conserva contexto estable y trabajo por proyectos; el código de producción vive en repositorios separados.
+Repositorio de trabajo para un agente que actúa como extensión del criterio, estilo y forma de pensar de Jorge. Conserva contexto estable y trabajo por proyectos. Cada proyecto de software puede contener su módulo `codigo/`.
 
 ## Estructura
 
@@ -15,6 +15,7 @@ Repositorio de trabajo para un agente que actúa como extensión del criterio, e
 │       ├── docs/                 # Referencia
 │       ├── input/                # Material de entrada
 │       ├── output/               # Entregables
+│       ├── codigo/               # Módulo de desarrollo, cuando se inicialice
 │       └── memory/
 │           ├── MEMORY.md         # Memoria consolidada del proyecto
 │           └── journals/         # Aportaciones e historial
@@ -56,11 +57,15 @@ Las dos skills se definen y versionan en este repo, junto con las existentes:
 
 Las skills se comparten al clonar el repo y no requieren instalación global. Si Codex no muestra una skill nueva, reinicia la aplicación.
 
-## Proyectos nuevos y packs de código
+## Proyectos nuevos y módulos de código
 
 `new-project` conserva su flujo de inicialización y crea la primera memoria. Después se añade su carpeta de journals y se registra el alta pendiente de indexar en un journal raíz. La incorporación al índice espera a `memory-update`.
 
-Las skills existentes y sus referencias permanecen protegidas. Si piden actualizar una memoria existente, prevalece la captura en journals definida en `AGENTS.md`. Al pedir `init-code-repo`, la anotación del pack en la memoria del clon se captura en un journal; los archivos generados deben incorporar también la separación entre captura y consolidación.
+`init-code-repo` prepara `projects/<nombre>/codigo/` y las instrucciones de desarrollo que sean necesarias, reutilizando lo existente. Git y el esqueleto técnico se preparan si la petición los incluye.
+
+El módulo puede tener memoria propia o no. Su existencia y gestión corresponden exclusivamente a las skills de memoria; `init-code-repo` no crea memorias, journals ni altas en el índice.
+
+Las skills y sus referencias siguen protegidas salvo autorización expresa para modificarlas. Las memorias consolidadas se actualizan únicamente mediante consolidación manual. El material seleccionado de `input/` debe quedar fuera de esa carpeta, que es transitoria.
 
 ## Adaptación de la especificación
 

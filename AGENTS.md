@@ -66,9 +66,9 @@ Los textos de `ejemplos.md` de `criterio-personal` son material en bruto: no se 
 
 ## Código de un producto
 
-El código de producción no vive en este repo.
+El código de cada proyecto se aloja en `projects/<nombre>/codigo/`, como un subámbito con el mismo sistema de memoria del hub.
 
-Si hay que arrancar el pack del repositorio de código de un proyecto, usa la skill `init-code-repo`.
+Para preparar ese módulo, usa la skill `init-code-repo`.
 
 ## Git
 
