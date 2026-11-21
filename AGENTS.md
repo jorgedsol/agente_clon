@@ -81,7 +81,7 @@ Deja los cambios sin commit y haz commit únicamente cuando yo lo pida explícit
 - Las skills (`criterio-personal`, `new-project`, `init-code-repo`) y sus `references/`: nunca modificar.
 - Este `AGENTS.md` global: no modificar sin mi autorización explícita. Pregunta siempre.
 - Los `AGENTS.md` de otros niveles: no modificar sin mi autorización explícita. Pregunta siempre.
-- Este `main.mdc`: no modificar sin mi autorización explícita. Pregunta siempre.
+- Este `AGENTS.md`: no modificar sin mi autorización explícita. Pregunta siempre.
 
 ## Preguntar antes de
 
